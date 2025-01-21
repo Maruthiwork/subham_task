@@ -1,0 +1,12 @@
+.carousel-next,.carousel-prev{filter:drop-shadow(0 1px 2px #4a4a4a);width:40px;height:40px;padding:20px;background-color:transparent;border:none;outline:0}
+.i-amphtml-base-carousel-arrows{flex-direction:column;justify-content:start}
+.qFeedWrapper{background:#000;min-height:100vh;display:flex;align-items:center;justify-content:center}
+.category{color:gold}
+.qFeedContentWrapper{width:100%;max-width:60%;position:relative}
+.reel{margin-bottom:1rem;text-align:center}
+.reel img{max-width:100%;height:auto}
+.reel h2{margin:.5rem 0}
+.reel video{width:100%;height:auto}
+.video-wrapper{position:relative}
+.overlay-link{position:absolute;bottom:0;left:0;width:100%;background:#000;color:#fff;text-align:center;padding:.5rem 0;text-decoration:none;font-size:1rem}
+.overlay-link:hover{background:rgba(0,0,0,.7)}

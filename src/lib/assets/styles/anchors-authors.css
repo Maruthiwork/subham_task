@@ -1,0 +1,79 @@
+.anchorsCard{display:grid;grid-template-columns:repeat(2,1fr);grid-column-gap:16px;align-items:center;border-radius:4px}
+.anchorsListingWrap .cardsRowWithborder:last-child,.authorsListingWrap .cardsRowWithborder:last-child{border-bottom:0;margin-bottom:0;padding-bottom:12px}
+.anchorsCardImg{border-radius:4px;height:100%}
+.anchorsCardContent{padding:16px 16px 16px 0}
+.anchorsCardContent h2{font-size:var(--font28);line-height:1;letter-spacing:-1.25px;margin-bottom:8px}
+.anchorsCardContent h6{font-size:var(--font16);font-weight:500;line-height:1}
+.anchorsCardFtr{margin:24px auto}
+.getLogo{display:flex;align-items:center}
+.getBtn{border-radius:4px;border:.878px solid #b10516;background:#d10014;box-shadow:5.269853115081787px 5.269853115081787px 7.02647066116333px 0 rgba(0,0,0,.15);font-size:var(--font17);color:var(--white);font-weight:500;line-height:1;letter-spacing:-1.317px;display:flex;align-items:center;padding:3px 10px 3px 6px}
+.getBtn img{width:100%;height:25px;margin-left:4px;display:block}
+.livetag{border-radius:4px;border:2px solid #b10516;background:#fff;display:flex;align-items:center;padding:2px 7px;color:var(--darkred);font-size:19.323px;font-weight:500;line-height:1;text-transform:uppercase;margin-left:-8px}
+.livetag .liveDotRed{margin-right:4px}
+.authorsListingWrap .gridWrap3{grid-column-gap:20px}
+.authorsImg{border-radius:4px;aspect-ratio:4/3;width:272px;overflow:hidden;display:block}
+.authorsImg img,.authorsIndividualImg img{width:100%}
+.authorsCardFtr{padding:12px 0 0}
+.anchorDesc p{font-size:var(--font18);line-height:1.3;font-weight:500}
+.anchorDesc p:last-of-type{display:inline}
+.anchorsCardContent a.readMoreLink{display:inline-block;font-size:18px;font-weight:700;color:#000}
+.individualCard{padding:18px 12px;display:grid;grid-template-columns:52% 45%;grid-column-gap:24px;align-items:center;border-radius:4px;margin-bottom:24px}
+.individualCard .anchorDesc{width:100%;grid-column:1/span 2;margin-top:16px;font-size:17px;font-style:normal;font-weight:500;line-height:143%}
+.authorsIndividualImg{border-radius:4px;height:100%;width:100%;overflow:hidden;display:block}
+.authorsIndividual{background-color:#f1f1f1}
+.authorsCardIndividual{background-color:#f1f1f1}
+.authorsCardContent h2{margin-bottom:8px}
+.authorsCardContent h6{font-size:var(--font20);font-weight:600}
+.authorsCardFtr h6{width:calc(100% - 90px)}
+.authorsIndividualList .authorsListingCard:first-child{padding-top:0}
+.authorsCardrow{justify-content:flex-start;gap:0 16px;margin-bottom:-50px}
+.authorsCard.hrcards:before{left:-8px;right:-8px}
+.authorsCard.hrcards:last-child:before{border-bottom:1px solid rgba(0,0,0,.16)}
+.authorsCard.hrcards.cardsHover{overflow:inherit}
+.authorsCard.hrcards{padding-bottom:16px}
+.authorsIndividualList .horicardRight .cardImg{height:100%}
+.authorsListingCard h2{font-size:var(--font26);line-height:1.1;font-weight:500;margin-bottom:8px}
+@media screen and (max-width:1024px){
+.readMoreLink span{display:none}
+.livetag{font-size:16.09px}
+.getBtn{font-size:var(--font14)}
+.anchorsCardContent h2{font-size:var(--font24);line-height:24px}
+.readMore{font-size:var(--font12);font-weight:500}
+.getBtn img{width:100%}
+.authorsIndividual .anchorsCardContent h2{font-size:var(--font28);line-height:28px;font-weight:900}
+.authorsIndividual .anchorsCardContent .anchorDesc p{font-size:var(--font17);line-height:23.8px;font-weight:500}
+.authorsListingCard h2{font-size:var(--font22)}
+.authorsCardContent h2{font-size:var(--font24);line-height:24px}
+.authorsCardContent h6{font-size:var(--font16)}
+.authorsCard.hrcards{padding-bottom:0}
+.authorsCardFtr h6{margin-bottom:8px}
+.authorsCard.hrcards:before{display:none}
+.authorsCardrow.threeColFlex .flexCardCol{width:calc(33% - 8px)}
+}
+@media screen and (max-width:575px){
+.individualCard{grid-template-columns:100%}
+.individualCard .anchorDesc{width:100%;grid-column:1;margin-top:16px;font-size:var(--font16)}
+.authorsIndividual .anchorsCardContent h2 br{display:none}
+.anchorsCardFtr{margin:12px auto}
+.authorsCardContent h2{padding-top:15px}
+.authorsListingCard h2{font-size:var(--font16)}
+.authorsIndividual .anchorsCardContent h2{font-size:var(--font24);line-height:24px}
+.anchorsCardContent h6{font-weight:700}
+.authorsIndividual .anchorsCardContent .anchorDesc p{font-size:var(--font16);line-height:24px;font-weight:500}
+.anchorsCardContent a.readMoreLink{font-size:var(--font16)}
+.getBtn{font-size:var(--font12);font-weight:500px}
+.livetag{font-size:var(--font14);line-height:14.42px}
+.anchorsCard{grid-template-columns:100%}
+.anchorsCardContent{padding:16px 16px;position:relative}
+.anchorsCardContent{padding:16px 16px 0;position:relative}
+.anchorsCardContent{padding:16px 16px 0 0;width:100%}
+.anchorsCardContent .readMore{position:absolute;right:16px;top:21px}
+.anchorsCardContent h2{width:calc(100% - 85px)}
+.threeColFlex .flexCardCol,.twoColFlex .flexCardCol{width:0%}
+.ImgThumb,.sqThumbImg{display:block!important}
+.authorsListingWrap .threeColFlex .flexCardCol{width:47%;margin-bottom:24px}
+.authorsListingWrap .authorsCardFtr h6{font-size:16px}
+.authorsIndividualList .authorsListingCard,.authorsIndividualList .authorsListingCard:first-child{padding:16px 0}
+.authorsCardFtr.flexwrap{display:block}
+.authorsCardFtr h6{width:calc(100% - 0px)}
+}

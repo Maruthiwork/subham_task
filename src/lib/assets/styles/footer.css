@@ -1,0 +1,128 @@
+.ftrCol2{width:18%}
+.ftrCol3{width:25%}
+.ftrCol6{width:50%}
+.ftrCol4{width:28%;padding:0 30px}
+.ftrCol7{width:56%}
+footer{background-color:var(--footer-background);padding:54px 0 40px}
+.footerRow{padding:36px 0}
+.ftrnewsSection .footerRow{display:grid;grid-template-columns:repeat(3,1fr);grid-column-gap:30px}
+.footerCategoriesSection .footerRow{border-top:0;display:grid;grid-template-columns:20% 52% 23%;grid-column-gap:30px}
+.mainFooterSection .footerRow{display:grid;grid-template-columns:20% 52% 23%;grid-column-gap:30px;padding:24px 0}
+.footerCategoriesSection .ftrCol2{width:100%;border-right:1px solid #c2c2c2}
+.footerCategoriesSection .ftrCol2 .flexwrap{flex-wrap:inherit}
+.footerCategoriesSection .ftrCol7{width:100%;border-right:1px solid #c2c2c2}
+.footerCategoriesSection .ftrCol3{width:100%}
+.footerRow h4{font-size:var(--font16);font-weight:700;line-height:1.1;margin-bottom:16px}
+.rshowsSection h4{margin:0}
+.rshowsSection .footerRow h4{width:15%}
+.rshowsSection .footerRow ul{width:85%}
+.rshowsSection ul li{display:inline-block}
+.rshowsSection ul li a{display:block;font-size:var(--font14);font-weight:400;line-height:1.1;color:var(--black);padding:6px 12px;border-right:1px solid #e2e2e2}
+.rshowsSection ul li:last-child a{border-right:0}
+.footerlist{padding:0 12px}
+.footerlist:first-child{padding-left:0;padding-top:0}
+.footerlist li a,.links li a,.newslinks li a{font-size:var(--font14);line-height:1.4;color:var(--black);padding:8px 0;display:inline-block}
+.footerlist li a{font-weight:400}
+.newslinks li a{font-weight:400;padding:12px 0;border-bottom:1px solid #c2c2c2;position:relative}
+.newslinks li:last-child a{border-bottom:0}
+.logosRow{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.logosRow img{height:26px;padding:0 6px}
+.logosRow a{height:26px;background-repeat:no-repeat;background-size:100%;object-fit:cover;background-position:100%}
+.rengLogo{background-image:url(/styles/images/republic-logo-eng.svg);width:144px}
+.rbanglaLogo{background-image:url(/styles/images/republic-logo-bangla.png);width:103px}
+.rbharatLogo{background-image:url(/styles/images/republic-logo-bharat.png);width:119px}
+.rkannadaLogo{background-image:url(/styles/images/R.Kannada-logo.svg);width:103px}
+.downloadLogosRow a{height:62px;width:179px;background-repeat:no-repeat;background-size:100%;-o-object-fit:cover;object-fit:cover;background-position:100%;position:relative;display:block}
+.appleLogo{margin-bottom:17px}
+.downloadLogosRow img{width:65%;margin-bottom:17px}
+.footerRow h5{font-size:var(--font14);font-weight:600;line-height:1.1;margin-bottom:16px}
+.ftrCol.borderRight{padding-right:30px}
+.socialNav{padding:20px 0;align-items:center;justify-content:center}
+.socialNav h5{margin:0 auto 18px}
+.socialLinks{align-items:center;justify-content:center}
+.socialLinks li a{width:38px;height:38px;display:block;margin:0 10px}
+.socialLinks li a img{width:100%;transition:all .4s linear;-webkit-transition:all .4s linear;-moz-transition:all .4s linear;-ms-transition:all .4s linear;-o-transition:all .4s linear}
+.copyright{font-size:var(--font14);line-height:1.4;font-weight:500}
+.links li a:hover,.newslinks li a:hover{color:var(--primary);padding-left:5px}
+.rshowsSection ul li a:hover,footer a:hover{color:var(--primary)}
+.mBottomNav{background:#d10014;text-align:center;position:fixed;bottom:0;width:100%;z-index:998;display:none;transform:translateY(100);transition:all .4s ease}
+.mBottomNav .card ul{display:flex;justify-content:space-around}
+.mBottomNav .card ul li{border-top:4px solid transparent;padding-bottom:12px;position:relative}
+.selected{border-top:4px solid #d10014!important}
+.mBottomNav .card ul li a{font-size:var(--font14);line-height:1;font-weight:500}
+.mBottomNav .card ul li.active a,.mBottomNav .card ul li:hover a{color:var(--yellow)}
+.mBottomNav .card ul li.active,.mBottomNav .card ul li:hover{border-top:4px solid var(--yellow)}
+.mBottomNav .card ul li a img{margin-top:8px;width:32px;height:32px}
+.mBottomNav .card ul li a span.badge{border-radius:2px;font-size:var(--font7);font-weight:500;position:absolute;left:-5px;top:12px;padding:2px 3px 1.5px 3px;line-height:100%}
+.badge-bg-yellow{border:1px solid var(--border-button);color:var(--border-button);background:var(--yellow)}
+.badge-bg-red{border:1px solid #ffbe98;color:#ffbe98;background:var(--Main-Color,#d10014)}
+@media (max-width:1024px){
+.mBottomNav{display:block}
+}
+@media (max-width:1024px){
+.footerCategoriesSection .footerRow,.ftrnewsSection .footerRow,.mainFooterSection .footerRow{grid-template-columns:100%;grid-column-gap:0}
+.footerCategoriesSection .ftrCol2,.ftrCol.borderRight,.ftrnewsCol.borderRight{border-right:0}
+.footerlist{width:max-content;display:flex;padding:0}
+.ftrCol.borderRight,.ftrnewsCol.pr30{padding-right:0}
+.ftrCol .links{display:flex;flex-wrap:wrap}
+.ftrCol .links li{width:auto}
+.ftrCol{border-bottom:1px solid var(--darkred);padding-bottom:20px}
+.socialNav{padding:24px 0 0}
+.mainFooterSection .footerRow{border-top:0;padding:20px 0 0;border-bottom:0}
+.logosRow{padding:24px 0 0 0}
+.downloadappBlock{padding:24px 0;text-align:center}
+footer{padding:15px 0 110px}
+.ftrflex{display:flex;flex-wrap:wrap;flex-direction:column}
+.ftrnewsSection{order:1;width:100%}
+.footerCategoriesSection{order:2;width:100%}
+.mainFooterSection{order:3;width:100%}
+.copyrightSection{order:4;width:100%}
+.copyrightSection{margin:0 auto;padding:24px 0 0}
+.footerRow{border-bottom:1px solid var(--darkred);border-top:0;padding:24px 0}
+.downloadLogosRow img:last-child{margin-bottom:0}
+.newslinks{display:flex;flex-wrap:wrap}
+.ftrnewsCol .newslinks{gap:0 24px}
+.newslinks li{width:48%}
+.newslinks li:nth-last-child(2) a{border-bottom:0}
+.downloadLogosRow{display:flex;justify-content:center}
+.downloadLogosRow img{width:148px;margin-right:15px;margin-bottom:0}
+.downloadLogosRow a{width:148px}
+.appleLogo{margin-bottom:0;margin-right:15px}
+.footerlist li a,.links li a{font-size:var(--font16);padding:8px 10px}
+.footerCategoriesSection .footerlist li a{padding:8px 25px}
+.newslinks li a{font-size:var(--font18);padding:8px 0;font-weight:500}
+.footerCategoriesSection .footerRow h4{font-size:var(--font18)}
+.mBottomNav .card ul li a img{width:auto}
+.footerCategoriesSection .ftrCol2 .flexwrap{flex-wrap:wrap}
+}
+@media (max-width:767px){
+.downloadLogosRow img{width:180px;margin:0 10px}
+.downloadLogosRow a{width:180px}
+.appleLogo{margin-right:10px}
+}
+@media (max-width:730px){
+.footerlist{width:50%;display:block}
+}
+@media (max-width:680px){
+.newslinks li{width:100%}
+.newslinks li:nth-last-child(2) a{border-bottom:1px solid #c2c2c2}
+.socialLinks li a{width:26px;height:26px}
+footer .logosRow img{height:20px}
+.ftrCol .links li{width:50%}
+.socialNav,copyrightSection{padding:24px 0 0}
+.downloadappBlock,.footerRow{padding:24px 0}
+.mainFooterSection .footerRow{display:block}
+.downloadLogosRow{display:block}
+.downloadLogosRow img{width:180px;margin:0 8px}
+.footerlist li a,.links li a{font-size:var(--font14);padding:8px 10px}
+.mBottomNav .card ul li a{font-size:11px}
+.mBottomNav .card ul li a img{width:auto;height:22px;display:block;margin:4px auto 6px}
+.newslinks li a{font-size:var(--font16)}
+.footerCategoriesSection .footerlist li a{padding:8px 0}
+}
+@media (max-width:680px){
+.downloadLogosRow img{width:180px;margin:8px auto;display:block}
+.downloadLogosRow a{width:180px;margin:8px auto}
+.appleLogo{margin-right:0}
+footer .logosRow a{margin:5px auto}
+}

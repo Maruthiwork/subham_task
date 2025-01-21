@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  nodejs_app:
+    image: svelte  # Specify the Node.js version you need
+    container_name: svelte 
+    restart: always
+   # working_dir: /usr/src/app
+   # volumes:
+    #  - ./app:/usr/src/app  # Map the local "app" directory to the container's working directory
+    ports:
+      - 8080:8080  # Map the container's port 3000 to the host's port 3000
+    environment:
+      - NODE_ENV=production  # Set environment variables for your Node.js app (if needed)
+    command: npm run start  # Specify the command to start your Node.js app

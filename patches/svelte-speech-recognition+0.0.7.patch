@@ -1,0 +1,22 @@
+diff --git a/node_modules/svelte-speech-recognition/NativeSpeechRecognition.js b/node_modules/svelte-speech-recognition/NativeSpeechRecognition.js
+index f438267..24465e3 100644
+--- a/node_modules/svelte-speech-recognition/NativeSpeechRecognition.js
++++ b/node_modules/svelte-speech-recognition/NativeSpeechRecognition.js
+@@ -1,4 +1,4 @@
+-import { browser } from "$app/env";
++import { browser } from "$app/environment";
+ const NativeSpeechRecognition = !browser ? null : (navigator.brave ? null : window.SpeechRecognition || window.webkitSpeechRecognition);
+ const isNative = (SpeechRecognition) => SpeechRecognition === NativeSpeechRecognition;
+ const browserSupportsSpeechRecognition = !!NativeSpeechRecognition;
+diff --git a/node_modules/svelte-speech-recognition/SpeechRecognition.js b/node_modules/svelte-speech-recognition/SpeechRecognition.js
+index 4eff05d..2db0310 100644
+--- a/node_modules/svelte-speech-recognition/SpeechRecognition.js
++++ b/node_modules/svelte-speech-recognition/SpeechRecognition.js
+@@ -1,6 +1,6 @@
+ /* eslint-disable @typescript-eslint/no-explicit-any */
+ import { commandToRegExp, compareTwoStringsUsingDiceCoefficient, browserSupportsPolyfills } from './utils';
+-import { browser } from '$app/env';
++import { browser } from "$app/environment";
+ import isAndroid from './isAndroid';
+ import RecognitionManager from './RecognitionManager';
+ import { derived, get, writable } from 'svelte/store';

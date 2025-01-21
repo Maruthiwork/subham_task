@@ -1,0 +1,24 @@
+runtime: nodejs
+env: flex
+runtime_config:
+  operating_system: ubuntu22
+network:
+  name: projects/republic-network-host/global/networks/republic-prod-network
+  subnetwork_name: republic-subnet-production
+automatic_scaling:
+  min_num_instances: 4
+  max_num_instances: 50
+  cpu_utilization:
+    target_utilization: 0.30
+resources:
+  cpu: 16
+  memory_gb: 32
+  disk_size_gb: 10
+handlers:
+  # Custom handler for Node.js scripts
+  - url: /_nodejs/.*
+    script: auto
+
+  # Catch-all handler for other routes
+  - url: /.*
+    script: auto
