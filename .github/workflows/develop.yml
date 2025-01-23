@@ -3,12 +3,12 @@ name: Build and Deploy to GKE
 on:
   push:
     branches:
-      - dev-gke
+      - develop
 
 env:
-  PROJECT_ID: ${{ secrets.GCLOUD_PROJECT }}
-  GKE_CLUSTER: dev-gke-2   # Updated cluster name here
-  GKE_ZONE: asia-south1-c   # Updated zone here
+  PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID }}
+  GKE_CLUSTER: myfirstcluster   # Updated cluster name here
+  GKE_ZONE: asia-southeast1-b   # Updated zone here
   DEPLOYMENT_NAME: gke-test-api # Add your deployment name here.
   IMAGE: static-site
 
@@ -26,7 +26,7 @@ jobs:
     - uses: google-github-actions/setup-gcloud@1bee7de035d65ec5da40a31f8589e240eba8fde5
       with:
         service_account_key: ${{ secrets.GKE_SA_KEY }}
-        project_id: ${{ secrets.GCLOUD_PROJECT }}
+        project_id: ${{ secrets.GCLOUD_PROJECT_ID }}
 
     # Configure Docker to use the gcloud command-line tool as a credential
     # helper for authentication
