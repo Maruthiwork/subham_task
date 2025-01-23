@@ -38,6 +38,7 @@ jobs:
       with:
         cluster_name: ${{ env.GKE_CLUSTER }}
         project_id: ${{ env.PROJECT_ID }}  # Add project_id here
+        location: asia-southeast1-b 
 
     # Build the Docker image
     - name: Build
