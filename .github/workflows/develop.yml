@@ -33,7 +33,7 @@ jobs:
             
       - name: Sync files to GKE (optional)
         run: |
-          kubectl exec -it ubuntu-deployment-766b499fc7-s5c2g -- mkdir -p /deploy
+          #kubectl exec -it ubuntu-deployment-766b499fc7-s5c2g -- mkdir -p /deploy
           kubectl cp ./ ubuntu-deployment-766b499fc7-s5c2g:/deploy
 
       - name: Build Docker image 
