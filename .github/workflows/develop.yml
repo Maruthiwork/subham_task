@@ -9,7 +9,7 @@ env:
   PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID }}
   GKE_CLUSTER: myfirstcluster   # Updated cluster name here
   GKE_ZONE: asia-southeast1-b   # Updated zone here
-  DEPLOYMENT_NAME: gke-test-api # Add your deployment name here.
+  DEPLOYMENT_NAME: test # Add your deployment name here.
   IMAGE: static-site
 
 jobs:
