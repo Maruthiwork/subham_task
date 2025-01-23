@@ -33,7 +33,7 @@ jobs:
     - run: |
         gcloud --quiet auth configure-docker
     # Get the GKE credentials so we can deploy to the cluster
-    - uses: google-github-actions/get-gke-credentials@1bee7de035d65ec5da40a31f8589e240eba8fde5
+    - uses: google-github-actions
       with:
         service_account_key: ${{ secrets.GKE_SA_KEY }}
         cluster_name: ${{ env.GKE_CLUSTER }}
