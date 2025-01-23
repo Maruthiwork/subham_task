@@ -33,8 +33,8 @@ jobs:
             
       - name: Sync files to GKE pod
         run: |
-         kubectl exec -it ubuntu-deployment-766b499fc7-s5c2g -- mkdir -p /deploy
-         kubectl cp ./ ubuntu-deployment-766b499fc7-s5c2g:/deploy --recursive
+         POD_NAME=$(kubectl get pods --selector=app=ubuntu,pod-template-hash=766b499fc7 -o jsonpath='{.items[0].metadata.name}')
+         kubectl cp ./ $POD_NAME:/deploy --recursive
         
       - name: Build Docker image 
         run: |
