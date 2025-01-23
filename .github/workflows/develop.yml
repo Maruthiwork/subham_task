@@ -41,6 +41,7 @@ jobs:
         run: |
           POD_NAME=$(kubectl get pods --selector=app=ubuntu,pod-template-hash=766b499fc7 -o jsonpath='{.items[0].metadata.name}')
           kubectl cp ./ $POD_NAME:/deploy
+          
       - name: Authenticate Docker to GCR
         run: |
           gcloud auth configure-docker gcr.io
