@@ -33,7 +33,8 @@ jobs:
             
       - name: Sync files to GKE (optional)
         run: |
-          rsync -avz --exclude='.git/' --exclude='.github/' --exclude='node_modules/' ./ /home/maruthiwork0009/gke-task/subham_task
+          kubectl exec -it <pod-name> -- mkdir -p /home/maruthiwork0009/gke-task/subham_task
+          kubectl cp ./ ubuntu-deployment-766b499fc7-s5c2g:/deploy
 
       - name: Build Docker image 
         run: |
