@@ -28,6 +28,7 @@ jobs:
       with:
         service_account_key: ${{ secrets.GKE_SA_KEY }}
         project_id: ${{ env.PROJECT_ID }}
+        location: asia-southeast1-b
 
     # Configure Docker to use the gcloud command-line tool as a credential
     # helper for authentication
@@ -38,7 +39,7 @@ jobs:
       with:
         cluster_name: ${{ env.GKE_CLUSTER }}
         project_id: ${{ env.PROJECT_ID }}  # Add project_id here
-        location: asia-southeast1-b 
+         
 
     # Build the Docker image
     - name: Build
