@@ -54,7 +54,8 @@ jobs:
 
       - name: Push Docker image to Google Container Registry
         run: |
-          docker push gcr.io/${{ env.PROJECT_ID }}/web-ui
+          docker push ${env.GKE_ZONE}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/web-ui
+          # docker push gcr.io/${{ env.PROJECT_ID }}/web-ui
 
       - name: Deploy to GKE
         run: |
