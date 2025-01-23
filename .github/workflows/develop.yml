@@ -13,10 +13,8 @@ env:
   IMAGE: mywebsite
 jobs:
 - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # Set up Google Cloud SDK (latest version that includes the plugin)
-      - name: Set up Google Cloud SDK
+  uses: actions/checkout@v3
+- name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v0
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}  # Store your Google Cloud Project ID as a secret
@@ -55,6 +53,8 @@ jobs:
       - name: Verify deployment
         run: |
           kubectl rollout status deployment/sampledeployment
+     
+      
 
       
 
