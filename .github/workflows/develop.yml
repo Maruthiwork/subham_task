@@ -31,11 +31,11 @@ jobs:
             --zone ${{ env.GKE_ZONE }} \
             --project ${{ env.PROJECT_ID }}
             
-      - name: Sync files to GKE (optional)
+      - name: Sync files to GKE pod
         run: |
-         # kubectl exec -it ubuntu-deployment-766b499fc7-s5c2g -- mkdir -p /deploy
-          kubectl cp ./ ubuntu-deployment-766b499fc7-s5c2g:/deploy
-
+         kubectl exec -it ubuntu-deployment-766b499fc7-s5c2g -- mkdir -p /deploy
+         kubectl cp ./ ubuntu-deployment-766b499fc7-s5c2g:/deploy --recursive
+        
       - name: Build Docker image 
         run: |
           docker build -t gcr.io/${{ env.GCP_PROJECT_ID }}/web-ui .
