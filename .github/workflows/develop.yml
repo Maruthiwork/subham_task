@@ -11,20 +11,18 @@ env:
   GKE_ZONE: asia-southeast1-b   # Updated zone here
   DEPLOYMENT_NAME: sample-deployment # Add your deployment name here.
   IMAGE: mywebsite
-  
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
+- name: Checkout repository
+        uses: actions/checkout@v3
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install gke-gcloud-auth-plugin
-        run: |
-          sudo apt-get install google-cloud-cli-gke-gcloud-auth-plugin 
-
-      - name: Set up GKE credentials
+      # Set up Google Cloud SDK (latest version that includes the plugin)
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}  # Store your Google Cloud Project ID as a secret
+          credentials_json: ${{ secrets.GCP_SA_KEY }}  # Store your service account JSON key in GitHub Secrets
+          install_components: 'gke-gcloud-auth-plugin'  # Ensure the plugin is installed by default
+       - name: Set up GKE credentials
         uses: google-github-actions/auth@v0.4.0
         with:
           credentials_json: ${{ secrets.GKE_SA_KEY }}  # Service account key stored in GitHub Secrets
@@ -57,3 +55,8 @@ jobs:
       - name: Verify deployment
         run: |
           kubectl rollout status deployment/sampledeployment
+
+      
+
+  
+     
