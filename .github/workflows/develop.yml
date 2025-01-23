@@ -1,4 +1,4 @@
-name: Build and Deploy to GKE
+tname: Build and Deploy to GKE
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 env:
   PROJECT_ID: genuine-ridge-446107-a4
   GKE_CLUSTER: myfirstcluster   # Updated cluster name here
-  GKE_ZONE: asia-south1-b   # Updated zone here
+  GKE_ZONE: asia-southeast1-b   # Updated zone here
   DEPLOYMENT_NAME: sample-deployment # Add your deployment name here.
   IMAGE: mywebsite
   
