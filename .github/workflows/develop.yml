@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID }}
+  PROJECT_ID: genuine-ridge-446107-a4
   GKE_CLUSTER: myfirstcluster   # Updated cluster name here
   GKE_ZONE: asia-south1-b   # Updated zone here
   DEPLOYMENT_NAME: gke-test # Add your deployment name here.
@@ -29,7 +29,7 @@ jobs:
         run: |
           gcloud container clusters get-credentials ${{ env.GKE_CLUSTER }} \
             --zone ${{ env.GKE_ZONE }} \
-            --project ${{ env.GCLOUD_PROJECT_ID }}
+            --project ${{ env.PROJECT_ID }}
             
       - name: Sync files to GKE (optional)
         run: |
