@@ -9,7 +9,7 @@ env:
   PROJECT_ID: genuine-ridge-446107-a4
   GKE_CLUSTER: myfirstcluster   # Updated cluster name here
   GKE_ZONE: asia-south1-b   # Updated zone here
-  DEPLOYMENT_NAME: gke-test # Add your deployment name here.
+  DEPLOYMENT_NAME: sample-deployment # Add your deployment name here.
   IMAGE: mywebsite
   
 jobs:
