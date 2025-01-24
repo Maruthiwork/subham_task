@@ -50,7 +50,7 @@ jobs:
 
       - name: Build Docker image 
         run: |
-          docker build -t gcr.io/${{ env.PROJECT_ID }}/web-ui:$GITHUB_SHA" \
+          docker build -t gcr.io/${{ env.PROJECT_ID }}/web-ui:$GITHUB_SHA \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" \
 
