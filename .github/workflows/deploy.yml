@@ -12,7 +12,7 @@ env:
   Region: asia-south1
   IMAGE: web-ui
   DEPLOYMENT_NAME: webui-deployment   # Your Kubernetes Deployment name
-  CONTAINER_REGISTRY: asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/test-repo
+  CONTAINER_REGISTRY: asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/test-repo/web-ui
 
 jobs:
   deploy:
@@ -58,7 +58,7 @@ jobs:
       env:
        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
       run: |
-        gcloud auth configure-docker asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/test-repo
+        gcloud auth configure-docker asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/test-repo/web-ui
 
     # Build Docker Image
     - name: Build Docker image
