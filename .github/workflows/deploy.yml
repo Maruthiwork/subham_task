@@ -1,0 +1,77 @@
+name: Deploy to GKE
+
+on:
+  push:
+    branches:
+      - develop  # Trigger on pushes to the dev-gke branch
+
+env:
+  PROJECT_ID: genuine-ridge-446107-a4
+  GKE_CLUSTER: myfirstcluster
+  GKE_ZONE: asia-southeast1-b  # Update if your cluster is in a different zone
+  IMAGE: asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/registry
+  DEPLOYMENT_NAME: webui-deployment   # Your Kubernetes Deployment name
+  CONTAINER_REGISTRY: asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/registry
+
+jobs:
+  deploy:
+    name: Deploy to GKE
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Authenticate with Google Cloud
+      uses: google-github-actions/auth@v1
+      with:
+        credentials_json: '${{ secrets.GKE_SA_KEY }}'
+
+    - name: Set GOOGLE_APPLICATION_CREDENTIALS environment variable
+      run: |
+        echo "${{ secrets.GKE_SA_KEY }}" > $GITHUB_WORKSPACE/gha-creds.json
+        export GOOGLE_APPLICATION_CREDENTIALS=$GITHUB_WORKSPACE/gha-creds.json
+        echo "Google Application Credentials set."
+
+    - name: Verify Authentication
+      run: |
+        gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
+        gcloud auth list --verbosity=debug
+        gcloud config list project
+
+    - name: Install gke-gcloud-auth-plugin via curl
+      run: |
+        echo "Installing gke-gcloud-auth-plugin"
+        curl -sSL https://sdk.cloud.google.com | bash
+        exec -l $SHELL
+        gcloud components install gke-gcloud-auth-plugin
+
+    - name: Get GKE credentials
+      run: |
+        gcloud container clusters get-credentials ${{ env.GKE_CLUSTER }} --zone ${{ env.GKE_ZONE }} --project ${{ env.PROJECT_ID }}
+        gcloud config list
+
+    # Build Docker Image
+    - name: Build Docker image
+      run: |
+        docker build \
+          --tag "${{ env.CONTAINER_REGISTRY }}/${{ env.IMAGE }}:$GITHUB_SHA" \
+          --build-arg GITHUB_SHA="$GITHUB_SHA" \
+          --build-arg GITHUB_REF="$GITHUB_REF" \
+          .
+
+    # Push Docker image to Google Artifact Registry
+    - name: Push Docker image to Artifact Registry
+      run: |
+        docker push "${{ env.CONTAINER_REGISTRY }}/${{ env.IMAGE }}:$GITHUB_SHA"
+
+    # Update Kubernetes Deployment with the new Docker image
+    - name: Deploy to GKE
+      run: |
+        kubectl apply -f k8s/deployment.yml
+        kubectl set image deployment/$DEPLOYMENT_NAME $DEPLOYMENT_NAME="${{ env.CONTAINER_REGISTRY }}/${{ env.IMAGE }}:$GITHUB_SHA"
+        kubectl rollout status deployment/$DEPLOYMENT_NAME
+        kubectl get services -o wide
