@@ -67,10 +67,9 @@ jobs:
     # Push Docker image to Google Artifact Registry
     - name: Push Docker image to Artifact Registry
       env:
-        CONTAINER_REGISTRY: ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}
         IMAGE: asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/registry
       run: |
-        docker push "${{ env.CONTAINER_REGISTRY }}/${{ env.IMAGE }}:$GITHUB_SHA"
+        docker push "${{ env.IMAGE }}:$GITHUB_SHA"
 
     # Update Kubernetes Deployment with the new Docker image
     - name: Deploy to GKE
