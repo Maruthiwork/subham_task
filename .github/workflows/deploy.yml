@@ -10,7 +10,7 @@ env:
   GKE_CLUSTER: myfirstcluster
   GKE_ZONE: asia-southeast1-b  # Update if your cluster is in a different zone
   Region: asia-south1
-  IMAGE: asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/registry
+  IMAGE: web-ui
   DEPLOYMENT_NAME: webui-deployment   # Your Kubernetes Deployment name
   CONTAINER_REGISTRY: asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/registry
 
@@ -67,7 +67,7 @@ jobs:
     # Push Docker image to Google Artifact Registry
     - name: Push Docker image to Artifact Registry
       env:
-        IMAGE: asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/registry
+        IMAGE: web-ui
       run: |
         docker push "${{ env.IMAGE }}:$GITHUB_SHA"
 
