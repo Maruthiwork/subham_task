@@ -3,7 +3,7 @@ name: Deploy to GKE
 on:
   push:
     branches:
-      - develop  # Trigger on pushes to the dev-gke branch
+      - develo  # Trigger on pushes to the dev-gke branch
 
 env:
   PROJECT_ID: genuine-ridge-446107-a4
