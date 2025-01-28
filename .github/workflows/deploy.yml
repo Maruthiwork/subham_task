@@ -54,6 +54,11 @@ jobs:
       run: |
         gcloud container clusters get-credentials ${{ env.GKE_CLUSTER }} --zone ${{ env.GKE_ZONE }} --project ${{ env.PROJECT_ID }}
         gcloud config list
+    - name: Configure Docker for Artifact Registry
+      env:
+       GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
+      run: |
+        gcloud auth configure-docker asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/registry
 
     # Build Docker Image
     - name: Build Docker image
@@ -64,9 +69,7 @@ jobs:
           --build-arg GITHUB_REF="$GITHUB_REF" \
           .
           
-    - name: Configure Docker for Artifact Registry
-      run: |
-        gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev
+    
 
     # Push Docker image to Google Artifact Registry
     - name: Push Docker image to Artifact Registry
