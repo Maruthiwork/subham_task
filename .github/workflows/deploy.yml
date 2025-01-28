@@ -62,7 +62,6 @@ jobs:
           --tag "${{ env.CONTAINER_REGISTRY }}/${{ env.IMAGE }}:$GITHUB_SHA" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" \
-    
           .
 
     # Push Docker image to Google Artifact Registry
