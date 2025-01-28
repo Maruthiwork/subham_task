@@ -3,7 +3,7 @@ name: Deploy to GKE
 on:
   push:
     branches:
-      - develo  # Trigger on pushes to the dev-gke branch
+      - develop  # Trigger on pushes to the dev-gke branch
 
 env:
   PROJECT_ID: genuine-ridge-446107-a4
@@ -12,7 +12,7 @@ env:
   Region: asia-south1
   IMAGE: web-ui
   DEPLOYMENT_NAME: webui-deployment   # Your Kubernetes Deployment name
-  CONTAINER_REGISTRY: asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/registry
+  CONTAINER_REGISTRY: asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/test-repo
 
 jobs:
   deploy:
@@ -58,7 +58,7 @@ jobs:
       env:
        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
       run: |
-        gcloud auth configure-docker asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/registry
+        gcloud auth configure-docker asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/test-repo
 
     # Build Docker Image
     - name: Build Docker image
