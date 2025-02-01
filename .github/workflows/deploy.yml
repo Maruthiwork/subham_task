@@ -39,8 +39,8 @@ jobs:
         gcloud auth configure-docker asia-south1-docker.pkg.dev
     - name: Build Docker image
       run: |
-         docker build -t "asia-south1-docker.pkg.dev/My First Project/test-repo/nginx:latest" .
-         docker push asia-south1-docker.pkg.dev/My First Project/test-repo/nginx:latest
+         docker build -t "asia-south1-docker.pkg.dev/${{ env.GOOGLE_PROJECT }}/test-repo/nginx:latest" .
+         docker push asia-south1-docker.pkg.dev/${{ env.GOOGLE_PROJECT }}/test-repo/nginx:latest
 
     - name: deploy to gke
       env:
