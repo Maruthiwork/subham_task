@@ -37,10 +37,22 @@ jobs:
         GOOGLE_PROJECT: ${{ secrets.GCLOUD_PROJECT }}
       run: |
         gcloud auth configure-docker asia-south1-docker.pkg.dev
-        #docker build \
-         # --tag "asia-south1-docker.pkg.dev/$GOOGLE_PROJECT/test-repo/nginx:latest" .
-         docker build -t "asia-south1-docker.pkg.dev/$GOOGLE_PROJECT/test-repo/nginx:latest" .
-        docker push asia-south1-docker.pkg.dev/$GOOGLE_PROJECT/test-repo/nginx:latest
+        - name: Build Docker image
+      run: |
+        docker build \
+          --tag "asia-south1-docker.pkg.dev/$GOOGLE_PROJECT/test-repo/nginx:latest:$GITHUB_SHA" \
+          --build-arg GITHUB_SHA="$GITHUB_SHA" \
+          --build-arg GITHUB_REF="$GITHUB_REF" \
+          .
+          
+    
+
+    # Push Docker image to Google Artifact Registry
+    - name: Push Docker image to Artifact Registry 
+      run: |
+        docker push "asia-south1-docker.pkg.dev/$GOOGLE_PROJECT/test-repo/nginx:latest:$GITHUB_SHA"
+        # docker build -t "asia-south1-docker.pkg.dev/$GOOGLE_PROJECT/test-repo/nginx:latest" .
+        # docker push asia-south1-docker.pkg.dev/$GOOGLE_PROJECT/test-repo/nginx:latest
 
     - name: deploy to gke
       env:
