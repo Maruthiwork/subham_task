@@ -1,5 +1,3 @@
 FROM nginx:latest
 
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-
-EXPOSE 7076:80
+RUN echo "Hello World!" > /usr/share/nginx/html/index.html
