@@ -30,4 +30,4 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: asia-south1-docker.pkg.dev/My First Project/test-repo/nginx:latest
+        image: asia-south1-docker.pkg.dev/genuine-ridge-446107-a4/test-repo/nginx:latest
