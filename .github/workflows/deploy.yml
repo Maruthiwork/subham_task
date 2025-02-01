@@ -24,7 +24,7 @@ jobs:
     - name: Set up Google Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
       with:
-          project_id: ${{ secrets.GCLOUD_PROJECT }}  # Store your Google Cloud Project ID as a secret
+          project_id: ${{ secrets.GCLOUD_PROJECT_ID }}  # Store your Google Cloud Project ID as a secret
           credentials_json: ${{ secrets.GKE_SA_KEY }}  # Store your service account JSON key in GitHub Secrets
           install_components: 'gke-gcloud-auth-plugin'  # Ensure the plugin is installed by default
     - name: setup
