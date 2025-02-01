@@ -27,10 +27,6 @@ jobs:
           project_id: ${{ secrets.GCLOUD_PROJECT_ID }}  # Store your Google Cloud Project ID as a secret
           credentials_json: ${{ secrets.GKE_SA_KEY }}  # Store your service account JSON key in GitHub Secrets
           install_components: 'gke-gcloud-auth-plugin'  # Ensure the plugin is installed by default
-    - name: setup
-      run: |
-        gcloud auth activate-service-account --key-file=${{ secrets.GKE_SA_KEY }}
-        gcloud config set project ${{ secrets.GCLOUD_PROJECT }}
         
     - name: Set up GKE credentials
       uses: google-github-actions/auth@v0.4.0
