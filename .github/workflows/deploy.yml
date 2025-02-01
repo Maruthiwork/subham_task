@@ -37,7 +37,7 @@ jobs:
         GOOGLE_PROJECT: ${{ secrets.GCLOUD_PROJECT }}
       run: |
         gcloud auth configure-docker asia-south1-docker.pkg.dev
-        - name: Build Docker image
+    - name: Build Docker image
       run: |
         docker build \
           --tag "asia-south1-docker.pkg.dev/$GOOGLE_PROJECT/test-repo/nginx:latest:$GITHUB_SHA" \
