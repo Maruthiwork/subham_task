@@ -4,7 +4,7 @@ name: Deploy Nginx
 on:
   push:
     branches:
-    - 'youtube_dev'
+    - 'youtube_de'
 
 jobs:
   deploy:
