@@ -37,9 +37,9 @@ jobs:
         GOOGLE_PROJECT: ${{ secrets.GCLOUD_PROJECT }}
       run: |
         gcloud auth configure-docker asia-south1-docker.pkg.dev
-        docker build \
-          --tag "asia-south1-docker.pkg.dev/$GOOGLE_PROJECT/test-repo/nginx:latest" .
-        # docker build -t asia-south1-docker.pkg.dev/$GOOGLE_PROJECT/test-repo/nginx:latest .
+        #docker build \
+         # --tag "asia-south1-docker.pkg.dev/$GOOGLE_PROJECT/test-repo/nginx:latest" .
+         docker build -t "asia-south1-docker.pkg.dev/$GOOGLE_PROJECT/test-repo/nginx:latest" .
         docker push asia-south1-docker.pkg.dev/$GOOGLE_PROJECT/test-repo/nginx:latest
 
     - name: deploy to gke
