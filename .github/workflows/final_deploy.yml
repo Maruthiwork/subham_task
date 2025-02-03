@@ -1,0 +1,51 @@
+
+name: Deploy Nginx
+
+on:
+  push:
+    branches:
+    - 'develo'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: code checkout
+      uses: actions/checkout@v2
+
+   # - name: install the gcloud cli
+   #   uses: google-github-actions/setup-gcloud@v0
+   #   with:
+     #   project_id: ${{ secrets.GCLOUD_PROJECT }}
+     #   service_account_key: ${{ secrets.GKE_SA_KEY }}
+      #  install_components: 'gke-gcloud-auth-plugin'
+      #  export_default_credentials: true
+    - name: Set up Google Cloud SDK
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+          project_id: ${{ secrets.GCLOUD_PROJECT_ID }}  # Store your Google Cloud Project ID as a secret
+          credentials_json: ${{ secrets.GKE_SA_KEY }}  # Store your service account JSON key in GitHub Secrets
+          install_components: 'gke-gcloud-auth-plugin'  # Ensure the plugin is installed by default
+        
+    - name: Set up GKE credentials
+      uses: google-github-actions/auth@v0.4.0
+      with:
+       credentials_json: ${{ secrets.GKE_SA_KEY }}  # Service account key stored in GitHub Secrets
+    - name: build and push the docker image
+      env:
+        GOOGLE_PROJECT: ${{ secrets.GCLOUD_PROJECT }}
+      run: |
+        gcloud auth configure-docker asia-south1-docker.pkg.dev
+    - name: Build Docker image
+      run: |
+         docker build -t "asia-south1-docker.pkg.dev/${{ secrets.GCLOUD_PROJECT_ID }}/test-repo/webui:latest" .
+         docker push asia-south1-docker.pkg.dev/${{ secrets.GCLOUD_PROJECT_ID }}/test-repo/webui:latest
+
+    - name: deploy to gke
+      env:
+        GOOGLE_PROJECT: ${{ secrets.GCLOUD_PROJECT }}
+      run: |
+        gcloud container clusters get-credentials myfirstcluster --zone asia-southeast1-b --project genuine-ridge-446107-a4
+        # sed -i "s/GOOGLE_PROJECT/$GOOGLE_PROJECT/g" resources.yaml
+        kubectl apply -f deployment.yml
