@@ -4,7 +4,7 @@ name: Deploy Nginx
 on:
   push:
     branches:
-    - 'develop'
+    - 'develo'
 
 jobs:
   deploy:
@@ -39,13 +39,14 @@ jobs:
         gcloud auth configure-docker asia-south1-docker.pkg.dev
     - name: Build Docker image
       run: |
-         docker build -t "asia-south1-docker.pkg.dev/${{ secrets.GCLOUD_PROJECT_ID }}/test-repo/webui:latest" .
-         docker push asia-south1-docker.pkg.dev/${{ secrets.GCLOUD_PROJECT_ID }}/test-repo/webui:latest
+         docker build -t "asia-south1-docker.pkg.dev/${{ secrets.GCLOUD_PROJECT_ID }}/test-repo/webui1:latest" .
+         docker push asia-south1-docker.pkg.dev/${{ secrets.GCLOUD_PROJECT_ID }}/test-repo/webui1:latest
 
     - name: deploy to gke
       env:
         GOOGLE_PROJECT: ${{ secrets.GCLOUD_PROJECT }}
       run: |
-        gcloud container clusters get-credentials myfirstcluster --zone asia-southeast1-b --project genuine-ridge-446107-a4
+        gcloud container clusters get-credentials mysecondcluster --zone asia-southeast1-b --project genuine-ridge-446107-a4
+        #gcloud container clusters get-credentials myfirstcluster --zone asia-southeast1-b --project genuine-ridge-446107-a4
         # sed -i "s/GOOGLE_PROJECT/$GOOGLE_PROJECT/g" resources.yaml
         kubectl apply -f deployment.yml
