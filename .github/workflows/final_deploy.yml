@@ -4,7 +4,7 @@ name: Deploy Nginx
 on:
   push:
     branches:
-    - 'develo'
+    - 'develop'
 
 jobs:
   deploy:
@@ -39,7 +39,7 @@ jobs:
         gcloud auth configure-docker asia-south1-docker.pkg.dev
     - name: Build Docker image
       run: |
-         docker build -t "asia-south1-docker.pkg.dev/${{ secrets.GCLOUD_PROJECT_ID }}/test-repo/webui1:latest" .
+         docker build --build-arg VITE_FB_ID=1923161321262442  --build-arg VITE_GOOGLE_ID=1098766585632-2n7ik4lrosm8kdh1ub2v594clieulu6v.apps.googleusercontent.com --build-arg  VITE_JW_LIVE_TV_ENGLISH=0JMA8rXq --build-arg VITE_JW_LIVE_TV_HINDI=KYQv7H88  --build-arg VITE_JW_LIVE_TV_BANGLA=jhPBndGO --build-arg VITE_GA_ID=G-5R3HXP63GC --build-arg VITE_PIN_INTEREST=0557bda55a05238368f86a9e15dca956 --build-arg VITE_GOOGLE_SITE_VERFICATION=cU_o7P6kj1ep1tjsazcIG4QcPL5NCBOdZObrhg8xUAU --build-arg VITE_APPLE_ID=1326556994 --build-arg VITE_FB_APP_ID=1938877716402788 --build-arg VITE_FB_PAGE=1159346367512575 --build-arg VITE_YANDEX_ID=9453f2e375ab432b -t "asia-south1-docker.pkg.dev/${{ secrets.GCLOUD_PROJECT_ID }}/test-repo/webui1:latest" .
          docker push asia-south1-docker.pkg.dev/${{ secrets.GCLOUD_PROJECT_ID }}/test-repo/webui1:latest
 
     - name: deploy to gke
