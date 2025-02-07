@@ -46,7 +46,7 @@ jobs:
       env:
         GOOGLE_PROJECT: ${{ secrets.GCLOUD_PROJECT }}
       run: |
-        gcloud container clusters get-credentials mysecondcluster --zone asia-southeast1-b --project genuine-ridge-446107-a4
+        gcloud container clusters get-credentials cluster-3 --region us-central1 --project genuine-ridge-446107-a4
         #gcloud container clusters get-credentials myfirstcluster --zone asia-southeast1-b --project genuine-ridge-446107-a4
         # sed -i "s/GOOGLE_PROJECT/$GOOGLE_PROJECT/g" resources.yaml
         kubectl apply -f deployment.yml
