@@ -1,5 +1,11 @@
-FROM nginx:latest
 
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+FROM node:18-alpine
 
-EXPOSE 7076:80
+WORKDIR /app
+COPY package.json ./
+RUN npm install
+COPY ./ ./
+
+EXPOSE 3002
+
+CMD [ "npm", "run", "start" ]

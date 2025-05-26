@@ -1,0 +1,309 @@
+#navbarNav {
+  transition: all 0.3s ease-in-out;
+}
+
+#menuIcon {
+  transition: opacity 0.3s ease, background-image 0.3s ease;
+}
+
+/* Default hamburger icon */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+}
+
+/* Cross icon */
+.close-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l14 14M15 1L1 15' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+  background-size: 1.5em 1.5em;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
+.hero-section {
+    background: url('https://via.placeholder.com/1500x500?text=Header+Background') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    padding: 8rem 0;
+}
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+.faculty-banner {
+     background: url('https://via.placeholder.com/1200x400?text=Faculty+Banner') no-repeat center center;
+     background-size: cover;
+     position: relative;
+     color: white;
+     padding: 6rem 0;
+     min-height: 400px;
+}
+ .faculty-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.faculty-quote {
+     position: relative;
+     z-index: 2;
+}
+.admissions-section {
+     background: url('./assets/images/day-shoot.jpeg') no-repeat center center;
+     background-size: cover;
+     position: relative;
+     color: white;
+     aspect-ratio: 16 / 9;
+     padding: 4rem 0;
+     align-items: center;
+    justify-content: center;
+    display: flex;
+    /* height: 1024px; */
+}
+
+
+/* .admissions-section {
+    aspect-ratio: 16 / 9;
+    background: url('./assets/images/admissions-bg.jpg') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+  } */
+  
+ .admissions-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+ .admissions-content {
+     position: absolute;
+     top: 0;
+     /* transform: translateX(-30%); */
+     z-index: 2;
+     display: flex;
+     align-items: center    ;
+ }
+ .rsj-facts .container{max-width: 100%;}
+ .rsj-facts .fact-icon {
+     width: 80px;
+     height: 80px;
+     border-radius: 50%;
+     margin-bottom: 10px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 2rem;
+     color: white;
+ }
+ .highlight-item {
+     min-height: 250px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+ }
+ .highlight-item img {
+     max-height: 150px;
+     object-fit: cover;
+     width: 100%;
+ }
+ .guest-item img {
+     height: 200px;
+     object-fit: cover;
+     width: 100%;
+ }
+ .masterclass-item {
+     min-height: 150px;
+     border-radius: 0.5rem; /* Bootstrap's default is often .375rem */
+ }
+ .purple-bg { background-color: #6a0dad; color: white; }
+ .red-box { background: linear-gradient(135deg, #e60000, #ff4d4d); color: white; }
+ .purple-box { background: linear-gradient(135deg, #6a0dad, #9370db); color: white; }
+
+ /* Ensure carousel images take full width */
+ .carousel-inner img {
+     width: 100%;
+     object-fit: cover; /* Adjust as needed */
+ }
+ .form-logo {
+     /* background-color: #dc3545; 
+     color: white;
+     padding: 0.5rem 1rem;
+     font-size: 1.5rem;
+     font-weight: bold;
+     display: inline-block;
+     margin-bottom: 1rem; */
+ }
+  
+  .accordion-button::after {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="red" xmlns="http://www.w3.org/2000/svg"><path d="M8 1v14M1 8h14" stroke="red" stroke-width="2"/></svg>');
+    transform: rotate(0deg);
+  }
+  
+  .accordion-button:not(.collapsed)::after {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="red" xmlns="http://www.w3.org/2000/svg"><path d="M1 8h14" stroke="red" stroke-width="2"/></svg>');
+  }
+
+  .footer-apply{
+    display: flex
+    ;
+        justify-content: space-between;
+        align-items: center;
+  }
+
+
+  
+  .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: black;
+    opacity: 0.5;
+    margin: 0 6px;
+    border: none;
+    transition: all 0.3s ease;
+    border: 1px solid white; /* White outline */
+    background-color: transparent; /* Transparent background */
+    position: relative;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .carousel-indicators [data-bs-target]{
+      width: 5px;height: 2px;
+    }
+  }
+ 
+
+ 
+  
+  .carousel-indicators .active {
+    opacity: 1;
+    background-color: white;
+    transform: scale(1.2); /* Slight zoom effect */
+  }
+
+  .caption-text{
+    width: fit-content !important;
+    position: absolute;
+    left: 50px;
+  }
+
+
+
+  
+
+
+  .asia-photo-gallery{
+
+    position: absolute;
+    width: 472px;
+    left: 50px;
+    top: 100px;
+    text-align: initial;
+  }
+  .asia-photo-gallery h2{
+
+    color: white;
+    font-weight: 700;
+    font-size: 64px;
+   
+  }
+
+  .asia-photo-gallery span{
+
+    color: white;
+
+  }
+  
+  .career-text{
+    line-height: 38px;
+    font-family: NeueHaasDisplayRoman;
+font-weight: 450;
+font-size: 28px;
+/* line-height: 140%; */
+letter-spacing: -2%;
+text-transform: capitalize;
+  }
+
+
+  .career-heading{
+    font-family: NeueHaasDisplayRoman;
+  }
+
+  .carousel-inner {
+    /* aspect-ratio: 16 / 9; */
+    overflow: hidden;
+  }
+  
+  .carousel-inner img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  @media screen and (min-width: 768px) {
+    .container.about_rsj{max-width: 100%;}
+    .program-highlights .container{max-width: 100%;}
+    .admissions-section{height: 100%;width: auto;}
+    .faculty-details .dedicated-card{border-right: 1px solid #dee2e6;}
+    .faculty-details .dedicated-card:last-child{border-right: none;}
+  }
+@media screen and (max-width: 768px) {
+  .footer-apply{
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .d-block.d-md-none {padding: 0;}
+  .carousel-indicators{justify-content: end;}
+    
+  .career-text{
+    line-height: 125%;
+    font-family: NeueHaasDisplayRoman;
+    font-weight: 450;
+    font-size: 18px;
+    /* line-height: 140%; */
+    text-transform: capitalize;
+  }
+
+
+}
+  
+  /* 
+font-family:'NeueHaasDisplayMedium';
+font-weight: 500;
+font-size: 18px;
+line-height: 125%;
+letter-spacing: 0%;
+
+
+
+
+
+
+
+   */

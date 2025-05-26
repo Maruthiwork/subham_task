@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: republicschool-ui
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: republicschool-ui
+  template:
+    metadata:
+      labels:
+        app: republicschool-ui
+    spec:
+      containers:
+      - name: republicschool-ui
+        image: gcr.io/YOUR_PROJECT_ID/republicschool-ui:latest
+        ports:
+        - containerPort: 3002
+        env:
+        - name: NODE_ENV
+          value: "development"
+

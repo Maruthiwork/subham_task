@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Failed - Republic School of Journalism | 11 months of LIVE LEARNING inside Asia’S Largest News Centre</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css" /> <!-- Use root path for CSS -->
+    <link rel="stylesheet" href="/styles/style.css"> <!-- Use root path for CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="/assets/logo/favicon.ico" type="image/icon"> <!-- Use root path for assets -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TVSGGFVNJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6TVSGGFVNJ');
+    </script>
+    <style>
+        /* Basic styles for centering content */
+        .verification-content {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 15px;
+        }
+        .verification-box {
+            background-color: #fef0f0; /* Light red background for failure */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        .verification-box h1 { color: #dc3545; } /* Red heading for failure */
+        .verification-box a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #dc3545; /* Use site's red button color */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+        }
+         .verification-box a:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
+        .h-70{
+        height: 55vh;
+    }
+
+    .list-term {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        list-style-type: auto;
+        padding: 0;
+    }
+
+    li::marker {
+        font-weight: 700;
+        font-size: 25px;
+    }
+
+    .points {
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 3px;
+        margin-left: 10px;
+    }
+
+
+
+
+    .welcome {
+        margin-bottom: 20px;
+    }
+
+    .text-bold-same {
+        font-weight: 700;
+    }
+
+    .w-fix {
+        width: 400px;
+    }
+    /* .navbar-expand-lg .navbar-nav .nav-link{font-size: 16px;} */
+    .navbar-nav{column-gap: 10px;}
+
+
+    @media screen and (min-width: 768px) {
+        .navbar-expand-lg .navbar-nav .nav-link {
+            color: #000;
+        }
+        .verification-content{margin-top: 20px;}
+    }
+
+    @media screen and (max-width: 768px) {
+        .list-term {
+            padding: 20px;
+        }
+    }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="top_navi_bar" class="navbar navbar-expand-lg navbar-dark position-absolute top-0 start-0 w-100" style="z-index: 999;">
+      <div class="container left-align menubarMobile">
+        <button class="navbar-toggler" id="navbarBtn" type="button"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span id="menuIcon" class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav gx-6 mx-auto">
+              <li class="nav-item"><a class="nav-link" href="./index.html#home">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="./index.html#about-rsj">About RSJ</a></li>
+              <li class="nav-item"><a class="nav-link" href="./index.html#rsj-diploma">RSJ Diploma</a></li>
+              <li class="nav-item"><a class="nav-link" href="./index.html#rsj-faculty">RSJ Faculty</a></li>
+              <li class="nav-item"><a class="nav-link" href="./index.html#apply-to-rsj">Apply to RSJ</a></li>
+              <li class="nav-item"><a class="nav-link" href="./index.html#photo-gallery">Photo Gallery</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="./index.html#faq">FAQ's</a></li>
+              <li class="nav-item"><a class="nav-link" href="./index.html#opportunities">Opportunities</a>
+              </li>
+          </ul>
+        </div>
+  
+        <!-- Example element with class "apply" (if not already in your code) -->
+        <div class="apply">
+          <!-- Content that should be hidden when a nav link is clicked -->
+          <!-- <p>Apply Now Section (for example)</p> -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="verification-content">
+        <div class="verification-box">
+            <h1>Payment Issue</h1>
+            <p>There was an issue processing or verifying your payment for order <strong>{{ORDER_ID}}</strong>.</p>
+            <p>{{ERROR_MESSAGE}} ({{STATUS_INFO}})</p>
+            <p>Please contact support if you believe this is an error or try applying again.</p>
+            <a href="/">Go to Homepage</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light text-dark py-4 border-top">
+        <div class="container">
+            <!-- Top Links Row -->
+            <div class="d-flex flex-wrap text-uppercase fw-semibold mb-3 gap-4 small footer_navigation">
+                <a href="/#about-rsj" class="text-dark text-decoration-none">About</a> <!-- Use root path -->
+                <a href="/terms-condition.html" class="text-dark text-decoration-none">Terms & Conditions</a> <!-- Use root path -->
+                <a href="/privacy-policy.html" class="text-dark text-decoration-none">Privacy Policy</a> <!-- Use root path -->
+                <a href="/refund-cancellation.html" class="text-dark text-decoration-none">Refund & Cancellation</a> <!-- Use root path -->
+                <a href="/contact-us.html" class="text-dark text-decoration-none">Contact Us</a> <!-- Use root path -->
+            </div>
+            <!-- Social Section -->
+            <div class="footer-apply mb-3">
+                <div>
+                    <p class="mb-2 small footer_social">Follow us on social</p>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="https://api.whatsapp.com/send?phone=918369995400">
+                            <img src="./assets/widget-images/social/WhatsApp_Desktop.svg" alt="">
+                        </a>
+                        <a href=" https://www.facebook.com/LearnAtRSJ">
+                            <img src="./assets/widget-images/social/Facebook_Desktop.svg" alt="">
+                        </a>
+                        <a href="https://x.com/RSJ_India">
+                            <img src="./assets/widget-images/social/X_Desktop.svg" alt="">
+                        </a>
+                        <a href="https://www.instagram.com/RSJ_india ">
+                            <img src="./assets/widget-images/social/Instagram_Deesktop.svg" alt="">
+                        </a>
+                        <a href="https://youtube.com/@RSJ_India ">
+                            <img src="./assets/widget-images/social/YouTube_Desktop.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                 <!-- Removed Apply button from footer on this page -->
+            </div>
+            <!-- Copyright -->
+            <div class=" small footer_copyright">
+                ©2025 All rights reserved for Republic School Of Journalism
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Add any other essential global scripts if needed -->
+</body>
+</html>

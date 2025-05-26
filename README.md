@@ -1,2 +1,1 @@
-# subham_task
-subham_task
+# republic-school

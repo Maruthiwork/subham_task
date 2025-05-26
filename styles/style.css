@@ -1,0 +1,1468 @@
+/* Minimal custom styles if needed */
+
+*,body {
+    font-family: NeueHaasDisplayRoman;
+}
+
+@font-face {
+    font-family: NeueHaasDisplayBlack;
+    src: url(/assets/font/NeueHaasDisplayBlack.ttf);
+}
+
+@font-face {
+    font-family: NeueHaasDisplayMedium;
+    src: url(/assets/font/NeueHaasDisplayMedium.ttf);
+}
+
+@font-face {
+    font-family: NeueHaasDisplayBold;
+    src: url(/assets/font/NeueHaasDisplayBold.ttf);
+}
+
+@font-face {
+    font-family: NeueHaasDisplayRoman;
+    src: url(/assets/font/NeueHaasDisplayRoman.ttf);
+}
+
+.h1-main-heading{
+    font-family: NeueHaasDisplayBold;
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 100%;
+    letter-spacing: -2%;
+}
+
+.h1-banner-heading{
+    font-family: NeueHaasDisplayBold;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 112.00000000000001%;
+    letter-spacing: 0%;
+}
+.diploma-programme{background-color: #DC0116;}
+.hero-section {
+    /* background: url('https://placehold.co/1500x500?text=Header+Background') no-repeat center center; */
+    background: url('../assets/video/homepage.mp4') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    padding: 8rem 0;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.faculty-banner {
+    background: url('https://placehold.co/1200x400?text=Faculty+Banner') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    padding: 6rem 0;
+    min-height: 400px;
+}
+
+/* .faculty-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+} */
+
+.faculty-quote {
+    position: relative;
+    z-index: 2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.admissions-section {
+    background: url('../assets/widget-images/eligibility_desktop.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    padding: 4rem 0;
+}
+
+.admissions-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.admissions-content {
+    position: relative;
+    z-index: 2;
+}
+
+.rsj-facts .fact-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.highlight-item {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.highlight-item img {
+    max-height: 150px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.guest-item img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.masterclass-item {
+    min-height: 150px;
+    border-radius: 0.5rem;
+    /* Bootstrap's default is often .375rem */
+}
+
+.purple-bg {
+    background-color: #6a0dad;
+    color: white;
+}
+
+.red-box {
+    background: linear-gradient(135deg, #e60000, #ff4d4d);
+    color: white;
+}
+
+.purple-box {
+    background: linear-gradient(135deg, #6a0dad, #9370db);
+    color: white;
+}
+
+/* Ensure carousel images take full width */
+.carousel-inner img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9; /* Maintain aspect ratio */
+    /* Adjust as needed */
+    /* Optional: constrain height */
+}
+
+.form-logo {
+    /* background-color: #dc3545;
+    Bootstrap danger red
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 1rem; */
+}
+
+.card {
+    border-radius: 0 !important;
+    overflow: hidden; /* Ensures pseudo-element stays inside the card bounds */
+    position: relative;
+  }
+  
+  /* Position relative on image so gradient overlay can be positioned absolutely */
+  .card-img-top {
+    position: relative;
+  }
+  .card-img, .card-img-top{border-radius: 0;}
+  /* Gradient overlay on the bottom of the image */
+  .card-img-top::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40%; /* Adjust height as needed for more or less gradient */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+  }
+  .guest-faculty{border-bottom: 1px solid #000;}
+.guest-faculty .container .container{padding-left: 0;padding-right: 0;}
+/* Hemant Css Start */
+
+.banner {
+    position: relative;
+    padding: 30px 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.75rem;
+    text-align: center;
+    background: linear-gradient(to right, #1309cd, #b111cb);
+    overflow: hidden;
+  }
+
+  .banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 200%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      -66deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.05) -134px,
+      transparent 70px,
+      transparent 70px
+    );
+    z-index: 0;
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 1;
+  }
+  .programme-content.container{
+      /* width: 100%!important; */
+      max-width: 100%;
+  }
+  .hero-section {
+position: relative;
+height: 100vh;
+overflow: hidden;
+text-align: center;
+}
+
+.bg-video {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: -1;
+}
+
+.video-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.4); /* adjust transparency as needed */
+z-index: 0;
+}
+
+.hero-content {
+position: relative;
+z-index: 1;
+height: 100%;
+display: flex;
+/* flex-direction: column; */
+justify-content: center;
+align-items: center;
+color: #fff;
+padding: 0 1rem;
+/* flex: 1; */
+}
+
+/* .apply-button{flex: 1;width: 50%;}
+.apply-button button{width: fit-content} */
+.republic-g-faculty{background-size: cover;}
+
+/* .container, .container-lg, .container-md, .container-sm, .container-xl{max-width: 100%;} */
+
+.about_rsj .col-lg-6{padding-right: 0;}
+.about_rsj_left{margin-top: 58px;}
+/* .future-ready-modules{text-align: left;margin-left: 0;} */
+@media screen and (min-width: 768px) {
+    .top_disclaimer{margin-left: 120px;}
+    .hero-section{height: 768px!important;}
+    .faculty-title{padding-left: 80px;}
+    .top_apply_button{width: 50%;text-align: left;}
+  .about_rsj .about_rsj_left{padding-left: 80px;padding-right: 56px;
+    font-family: 'NeueHaasDisplayMedium';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 135%;
+    letter-spacing: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.about_rsj .about_rsj_left p{
+    font-family: 'NeueHaasDisplayMedium';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 135%;
+    letter-spacing: 0%;
+}
+.navbar.newNav{background-color: #fff;position: fixed!important;top: 0;}
+.navbar-expand-lg.newNav .navbar-nav .nav-link{color: #000;}
+.navbar-expand-lg .navbar-nav .nav-link{color: #fff;}
+.navbar-expand-lg .navbar-nav .nav-link{
+    font-family: 'NeueHaasDisplayMedium';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0%;
+}
+.career-container{display: flex;justify-content: center;flex-direction: column;}
+  .hero-text{text-align: left;}
+  .hero-text p{
+    font-family: 'NeueHaasDisplayMedium';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 125%;
+    letter-spacing: 0%;}
+
+  .mobile-img{display: none;}
+  .republic-g-faculty{background-image: url("../assets/widget-images/line-bg.png");background-size: cover;}
+  .navbar-nav{margin:auto;column-gap: 10px;align-items: center;}
+  .program-highlights h2{padding-left: 80px;}
+  .future-ready-modules{
+      padding-left: 80px;
+      padding-right: 80px;
+  }
+  .banner_content_text{padding-left: 66px;
+    padding-right: 58px;
+    font-family:'NeueHaasDisplayRoman';
+font-weight: 450;
+font-size: 28px;
+line-height: 140%;
+text-transform: capitalize;
+}
+  .banner{padding: 20px 20px;}
+  .banner-content{
+    font-family:NeueHaasDisplayBold;
+font-weight: 700;
+font-size: 38px;
+line-height: 120%;
+letter-spacing: -2%;
+text-transform: capitalize;
+  }
+  .faculty-hero .content-wrapper{
+    font-family:' NeueHaasDisplayBold';
+font-weight: 700;
+font-size: 66px;
+line-height: 100%;
+letter-spacing: -2%;
+  }
+  .faculty-quote{
+    font-size: 66px;
+  }
+}
+.dedicated_disclaimer,.faculty_disclaimer,.dedicated-card{
+  font-family: 'NeueHaasDisplayMedium';
+font-weight: 500;
+font-size: 24px;
+line-height: 130%;
+letter-spacing: 0%;
+color: #000;
+}
+@media screen and (max-width: 768px) {
+    
+    .top_apply_button.py-5{padding-top: 10px!important;padding-bottom: 10px!important;}
+    .hero-text a{color: #fff!important;}
+    .hero-text p{font-family:'NeueHaasDisplayMedium';
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 125%;
+        letter-spacing: 0%;
+        }
+    .dedicated-card{border-bottom: 1px solid #000;}
+    .dedicated-card:last-child{border: none;}
+    .banner_content_text p{
+        font-family: 'NeueHaasDisplayMedium';
+font-weight: 500;
+font-size: 20px;
+line-height: 120%;
+letter-spacing: 0%;
+    }
+    .banner_content_text h2{
+        font-family: 'NeueHaasDisplayBold';
+font-weight: 700;
+font-size: 28px;
+line-height: 112.00000000000001%;
+letter-spacing: -1%;
+    }
+    .about_rsj_left{
+        font-family: 'NeueHaasDisplayMedium';
+font-weight: 500;
+font-size: 24px;
+line-height: 130%;
+letter-spacing: 0%;
+color: #000;
+/* margin-left: 20px; */
+/* margin-right: 20px; */
+    }
+    .about_rsj_left h2,.program-highlights h2{padding-left: 20px;}
+    .about_rsj_left p{padding-left: 20px;padding-right: 20px;}
+  .top_content_wrapper{flex-direction: column;}
+  .hero-text{text-align: center;}
+  .desktop-img{display: none;}
+  .republic-g-faculty{background-image: url("../assets/widget-images/mobile/line-mobile.png");}
+  .about_rsj .col-lg-6{padding-left: 0;}
+  .navbar-collapse.show {
+      position: fixed;          /* Make the collapse cover the whole screen */
+      top: 0;
+      right: 0;
+      width: 260px;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+      backdrop-filter: blur(6px);     /* The actual blur effect */
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 9999;          /* Ensure it's on top of everything else */
+    }
+
+    /* Ensure the nav links are white in the overlay */
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-size: 1.25rem;      /* Larger text on mobile if desired */
+    }
+
+
+    .guest-item img{
+        height: 300px
+        }
+        .rsj-facts img{width: 100%;}
+}
+
+
+.navbar-nav .nav-link:hover {
+    text-decoration: underline; /* Optional: underline on hover */
+  }
+  .navbar-nav .nav-link.active {
+    text-decoration: underline;
+  }
+  
+  
+  
+/* On larger screens, keep the original design */
+.navbar {
+    z-index: 1;      /* So it stays on top of page content */
+  }
+
+  .nav-link {
+    color: white;    /* White text by default */
+  }
+
+  /* Optional: Slight styling for brand or top logo */
+  .top-logo {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+
+
+  /* ----faculty hero */
+  .faculty-hero {
+    position: relative;
+    background: url('../assets/widget-images/RSJ_FACULTY_DESKTOP.png') no-repeat center center;
+    /* Replace URL above with your own background image */
+    background-size: cover;
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Optional dark overlay to ensure text is visible */
+  .faculty-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  /* Container that holds the text so it's stacked above the overlay */
+  .faculty-hero .content-wrapper {
+    position: absolute;
+    z-index: 2;
+    max-width: 1000px;
+    padding: 2rem;
+    right: 0;
+    bottom: 0;
+  }
+
+  .faculty-title {
+    /* font-size: 2rem; */
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #000; /* RSJ Faculty heading in black? If you need it in white, change to #fff */
+    background-color: #fff; /* White background for contrast if you want it to stand out */
+    display: inline-block;
+    /* padding-left: 80px; */
+  }
+
+  .faculty-quote {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .faculty-description {
+    font-size: 28px;
+    line-height: 1.6;
+    max-width: 700px;
+  }
+
+  /* Adjust spacing on smaller devices */
+  @media (max-width: 768px) {
+    .top_wrapper_video{flex-direction: column;}
+    .top_wrapper_video figure img{
+        width: 216px;
+        height: 161px;
+        margin-bottom: 35px;
+        margin-top: 60px;
+    }
+    .top_disclaimer{margin-bottom: 50px;}
+    /* .top_wrapper_video .top_apply_button{margin-bottom: 150px;} */
+    .faculty-title {
+      font-size: 1.75rem;
+    }
+    .faculty-quote {
+      font-size: 1.5rem;
+    }
+    .faculty-description {
+      font-size: 1rem;
+    }
+    .top_logo{
+      height: 100px;
+      display: block;
+      text-align: center;
+    }
+  }
+  /* ------------ */
+  .master_class_img{margin-left: 50px;margin-right: 50px;}
+
+/* ENd Hemant CSS */
+
+/* Start Accordion Fixes */
+
+.bg-future-ready-module {
+    background-color: #F0F0F0;
+}
+
+
+.bg-future-ready-module .accordion-item {
+    background-color: unset;
+}
+
+.bg-future-ready-module .accordion-button {
+    background-color: unset;
+}
+.accordion-item{border-bottom: 1px solid #000!important;}
+.bg-future-ready-module .accordion-button {
+    font-family: 'NeueHaasDisplayRoman';
+    font-weight: 450;
+    font-size: 48px;
+    line-height: 120%;
+    text-transform: capitalize;
+    padding-left: 0px;
+}
+
+.bg-future-ready-module .accordion-body {
+    font-family: 'NeueHaasDisplayMedium';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    padding-left: 0px;
+}
+
+.future-ready-module-heading{
+    margin-block: 20px;
+}
+
+.accordion {
+    /* --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23212529'%3e%3cpath d='M8 1v14M1 8h14' stroke='%23212529' stroke-width='2' stroke-linecap='round'/%3e%3c/svg%3e"); */
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23D11014'%3e%3cpath d='M8 1v14M1 8h14' stroke='%23D11014' stroke-width='2' stroke-linecap='round'/%3e%3c/svg%3e");
+
+    /* --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23212529'%3e%3cpath d='M1 8h14' stroke='%23212529' stroke-width='2' stroke-linecap='round'/%3e%3c/svg%3e"); */
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23D11014'%3e%3cpath d='M1 8h14' stroke='%23D11014' stroke-width='2' stroke-linecap='round'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed) {
+    color: unset;
+}
+
+/* .accordion-button::after {
+    border: 1px solid #D11014;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+} */
+
+.accordion-button::after {
+    border: 1px solid #D11014;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admissions-content .h3-heading {
+    font-family: NeueHaasDisplayBold;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.admissions-content .accordion-body ul li {
+    font-family: NeueHaasDisplayMedium;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 10px;
+}
+
+.admissions-content .accordion-body {
+    text-align: left;
+}
+
+.admissions-content .accordion-header {
+    font-family: NeueHaasDisplayBold;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 120%;
+    letter-spacing: -2%;
+    text-transform: capitalize;
+
+}
+
+.admissions-content .accordion-body .step-heading {
+    font-family: NeueHaasDisplayMedium;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 20px;
+}
+
+.admissions-content .accordion .accordion-body .h2-heading {
+    font-family: NeueHaasDisplayBold;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.admissions-content .accordion .accordion-body ul.different-list-style {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.admissions-content .accordion .accordion-body ul.different-list-style li::before {
+    content: ">";
+    padding-right: 10px
+}
+
+.admissions-content .accordion .accordion-body ul.different-list-style li {
+    list-style-type: none;
+    margin-block: 10px;
+}
+
+.admissions-content .accordion .accordion-body ul.different-list-style li ul li {
+    list-style-type: disc;
+    margin-block: 10px;
+}
+
+.admissions-content .accordion .accordion-body ul.different-list-style li ul li::before {
+    content: "";
+    padding-right: 0px
+}
+
+.admissions-content p {
+    font-family: NeueHaasDisplayMedium;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+.admissions-content .accordion-item {
+    margin-bottom: 20px;
+}
+
+.admissions-content .accordion-body{
+    max-height: 300px;
+    overflow: auto;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #F4F4F4;
+}
+
+
+
+
+.faqs {
+    background-color: #F0F0F0
+}
+
+.faqs p {
+    font-family: NeueHaasDisplayMedium;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0%;
+}
+
+
+.faqs .h3-heading {
+    font-family: NeueHaasDisplayBold;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.faqs .accordion-body ul li {
+    font-family: NeueHaasDisplayMedium;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 10px;
+}
+
+.faqs .accordion-body {
+    text-align: left;
+}
+
+.faqs .accordion-header {
+    font-family: NeueHaasDisplayBold;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 120%;
+    letter-spacing: -2%;
+    text-transform: capitalize;
+
+}
+
+.faqs .accordion-body .step-heading {
+    font-family: NeueHaasDisplayMedium;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 20px;
+}
+
+.faqs .accordion .accordion-body .h2-heading {
+    font-family: NeueHaasDisplayBold;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.faqs .accordion-item {
+    background-color: unset;
+}
+
+.faqs .accordion-button {
+    background-color: unset;
+
+    font-family: NeueHaasDisplayMedium;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0%;
+
+}
+
+.faqs .accordion .badge-faq {
+    width: 37px;
+    height: 37px;
+    border-radius: 22px;
+    border-width: 1px;
+    padding: 5px;
+    border: 1px solid #D11014;
+    color: #D11014;
+    font-family: NeueHaasDisplayBlack;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.faqs ul {
+    padding-left: 20px;
+}
+
+.career-starts .wrapper-yout-career-start-here {
+    background-color: #D11014;
+    padding: 3rem;
+}
+
+.career-starts .career-heading{
+    font-family: NeueHaasDisplayBold;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 120%;
+    letter-spacing: -2%;
+    text-transform: capitalize;
+}
+
+.career-starts .career-paragraph{
+    font-family: 'NeueHaasDisplayRoman';
+    font-weight: 450;
+    font-size: 28px;
+    line-height: 140%;
+    text-transform: capitalize;
+}
+
+.card-body,.card-body p{
+    font-family: 'NeueHaasDisplayBold';
+font-weight: 700;
+font-size: 24px;
+line-height: 110.00000000000001%;
+letter-spacing: -2%;
+text-transform: capitalize;
+}
+@media screen and (max-width:768px) {
+    .footer_social{margin-top: 20px;}
+    .footer_copyright{
+        font-family: 'NeueHaasDisplayMedium';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: 4%;
+    }
+    footer{padding-left: 20px;padding-right: 20px;}
+    .footer_navigation{display: flex;flex-direction: column;
+        font-family: 'NeueHaasDisplayMedium';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: 4%;
+    }
+    .rsj-facts{
+        padding-bottom: 0!important;
+    }
+    .faculty-title{padding-left: 20px;}
+    .future-ready-module-heading {
+        font-family: NeueHaasDisplayBold;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 112.00000000000001%;
+        letter-spacing: -1%;
+    }
+
+    .bg-future-ready-module .accordion-button {
+        font-family: 'NeueHaasDisplayRoman';
+        font-weight: 450;
+        font-size: 24px;
+        line-height: 120%;
+        text-transform: capitalize;
+    }
+
+    .bg-future-ready-module .accordion-body {
+        font-family: 'NeueHaasDisplayRoman';
+        font-weight: 450;
+        font-size: 18px;
+        line-height: 120%;
+    }
+
+    .admissions-content .accordion-header {
+        font-family: 'NeueHaasDisplayMedium';
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 112.00000000000001%;
+        letter-spacing: -1%;
+    }
+
+    .admissions-content .h3-heading {
+        font-family: 'NeueHaasDisplayBold';
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 100%;
+        letter-spacing: 0%;
+    }
+
+    .admissions-content .accordion-body ul li {
+        font-family: 'NeueHaasDisplayRoman';
+        font-weight: 450;
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+    .admissions-content .accordion .accordion-body .h2-heading{
+        font-family: 'NeueHaasDisplayBold';
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .admissions-content .accordion-body .step-heading{
+        font-family: 'NeueHaasDisplayMedium';
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        margin-bottom: 20px;
+    }
+
+    .faqs .faq-heading{
+        font-family: 'NeueHaasDisplayBold';
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 112.00000000000001%;
+        letter-spacing: -1%;
+        margin-bottom: 1rem !important;
+    }
+
+    .faqs .accordion-button{
+        font-family: 'NeueHaasDisplayMedium';
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 125%;
+        letter-spacing: 0%;
+    }
+
+    .faqs .accordion .badge-faq{
+        width: 24px;
+        height: 24px;
+        font-size: 15.57px;
+    }
+
+    .accordion-button::after{
+        width: 28px;
+        height: 28px;
+        background-size: 16px;
+    }
+
+    .faqs .accordion-flush>.accordion-item>.accordion-header .accordion-button, .accordion-flush>.accordion-item>.accordion-header .accordion-button.collapsed{
+        padding-left: 5px;
+    }
+
+    .faqs .accordion-body{
+        /* padding-left: 35px; */
+    }
+
+    .admissions-content{
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .admissions-content .col-md-4, .admissions-content .col-md-8{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .faqs {
+        background-color: #fff
+    }
+
+    .career-starts .wrapper-yout-career-start-here{
+        padding: 1rem;
+    }
+
+    .career-starts .career-heading{
+        margin-block: 2rem;
+        font-size: 28px;
+    }
+
+    .h1-main-heading{
+        font-size: 28px;
+        margin-top: 20px;
+    }
+    
+    .h1-banner-heading{
+        font-size: 28px;
+    }
+
+
+    .navbar .container.left-align {
+        justify-content: end;
+    }
+
+    .navbar .container.left-align .navbar-toggler {
+        border: none;
+        /* padding: 0px; */
+        z-index: 99999;
+        position: fixed;
+        top: 10px;
+    }
+
+    .navbar .container.left-align .navbar-nav{
+        position: relative;
+        top: 15%;
+        text-align: left;
+        left: 10%;
+    }
+
+    .navbar .container.left-align .navbar-nav .nav-item .nav-link.active{
+        text-decoration: underline;
+        margin-bottom: 2px;
+    }
+
+    :root{   
+        --bs-navbar-close-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M6 6L24 24M24 6L6 24'/%3e%3c/svg%3e");
+    }
+
+
+    #navbarBtn.open .navbar-toggler-icon {
+        background-image: url(../assets/logo/ic_baseline-cross.svg);
+    }
+      
+    .navbar-toggler-icon {
+        background-image: url(../assets/logo/ic_baseline-menu.svg);
+    }
+
+    .navbar-toggler:focus {
+        text-decoration: none;
+        outline: 0;
+        box-shadow: none;
+    }
+
+    .collapsing {
+        transition: none !important;
+      }
+      
+
+    .faculty-quote{
+        font-family: 'NeueHaasDisplayBold';
+font-weight: 700;
+font-size: 28px;
+line-height: 100%;
+letter-spacing: -2%;
+    }
+    .faculty-description{
+        font-family: 'NeueHaasDisplayMedium';
+font-weight: 500;
+font-size: 18px;
+line-height: 125%;
+letter-spacing: 0%;
+    }
+    .faculty-details.py-5{padding-top: 10px!important;}
+}
+
+
+/* End Accordion Fixes */
+/* bathum ji's css */
+/* General Modal Adjustments (if needed) */
+#application-modal .modal-dialog {
+    max-width: 600px; /* Adjust width for payment details if needed */
+}
+
+/* Payment Details View */
+.payment-details-view {
+    border: 2px solid #dc3545; /* Red border */
+    padding: 1.5rem;
+    font-family: sans-serif; /* Basic font */
+}
+
+.payment-details-view .payment-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.payment-details-view .payment-header h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.payment-details-view .payment-header p {
+    font-size: 0.9rem;
+    color: #6c757d; /* Gray text */
+}
+
+.payment-details-view .order-details h3 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.payment-details-view .details-grid {
+    display: grid;
+    grid-template-columns: auto auto; /* Label and Value */
+    row-gap: 5px;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+.payment-details-view .details-grid dt {
+    font-weight: bold;
+    text-align: initial;
+    color: #495057;
+}
+
+.payment-details-view .details-grid dd {
+    margin-bottom: 0;
+    color: #212529;
+}
+
+.payment-details-view .pay-now-section {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.payment-details-view .btn-pay-now {
+    background-color: #000;
+    color: #fff;
+    padding: 0.6rem 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.payment-details-view .btn-pay-now:hover {
+    background-color: #333;
+}
+
+.payment-details-view .payment-disclaimer {
+    font-size: 0.8rem;
+    color: #495057;
+    margin-top: 1.5rem;
+    border-top: 1px solid #dee2e6;
+    padding-top: 1rem;
+}
+
+.payment-details-view .payment-disclaimer strong {
+    color: #000;
+}
+
+/* Success/Failure Views */
+.payment-result-view {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: sans-serif;
+}
+
+.payment-result-view .result-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.payment-result-view .result-icon.success {
+    color: #198754; /* Bootstrap success green */
+    /* Simple circle check */
+    display: inline-block;
+    border: 3px solid #198754;
+    border-radius: 50%;
+    width: 70px; /* Adjust size */
+    height: 70px;
+    position: relative;
+}
+.payment-result-view .result-icon.success::after {
+    content: '\2714'; /* Checkmark */
+    font-size: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.payment-result-view .result-icon.failure {
+    color: #dc3545; /* Bootstrap danger red */
+     /* Simple circle cross */
+    display: inline-block;
+    border: 3px solid #dc3545;
+    border-radius: 50%;
+    width: 70px; /* Adjust size */
+    height: 70px;
+    position: relative;
+}
+.payment-result-view .result-icon.failure::after {
+    content: '\00D7'; /* Multiplication sign (X) */
+    font-size: 3.5rem; /* Larger X */
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1; /* Adjust vertical alignment */
+}
+
+
+.payment-result-view h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.payment-result-view h2.success {
+    color: #198754;
+}
+
+.payment-result-view h2.failure {
+    color: #dc3545;
+}
+
+.payment-result-view p {
+    color: #495057;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.payment-result-view .btn-result-action {
+    padding: 0.6rem 1.5rem;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.payment-result-view .btn-result-action.home {
+    color: #dc3545; /* Red text */
+    background-color: transparent;
+    border: none;
+    font-size: 0.9rem;
+}
+.payment-result-view .btn-result-action.home:hover {
+    text-decoration: underline;
+}
+
+
+.payment-result-view .btn-result-action.retry {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+}
+.payment-result-view .btn-result-action.retry:hover {
+    background-color: #bb2d3b;
+}
+
+/* Ensure modal content takes height */
+#application-modal .modal-body {
+    min-height: 300px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically if needed */
+}
+
+/* Apply RSJ Button with Offset Background */
+.apply-rsj-button {
+  background-color: #E60028;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 0.3rem;
+  /* --- Offset Background Effect --- */
+  position: relative; /* Needed for the ::after pseudo-element */
+  z-index: 1; /* Ensure button is above the pseudo-element */
+  overflow: visible; /* Allow pseudo-element to show outside bounds */
+  transition: transform 0.1s ease-in-out;
+  box-shadow: -4px 4px 0 rgb(106, 13, 173);
+}
+
+.apply-rsj-button::after {
+  /* content: ''; */
+  position: absolute;
+  top: 5px;    /* Adjust vertical offset */
+  left: 5px;   /* Adjust horizontal offset */
+  width: 100%;
+  height: 100%;
+  /* background-color: #6f42c1; */ /* Example purple */
+  background-color: #E60028; /* Closer purple from image */
+  border-radius: inherit; /* Match button's border radius */
+  z-index: -1; /* Place it behind the button */
+}
+
+/* Optional: Add a slight lift on hover */
+.apply-rsj-button:hover {
+    transform: translate(-2px, -2px);
+}
+
+/* Ensure icon aligns well */
+.apply-rsj-button .bi {
+  vertical-align: middle; /* Adjust alignment if needed */
+  margin-left: 0.5rem; /* Space between text and icon */
+}
+
+/* jQuery Validation Error Styling */
+#application-form .invalid-feedback {
+    display: block; /* Ensure error messages are shown */
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: .875em; /* Match Bootstrap's default */
+    color: #dc3545; /* Bootstrap danger color */
+}
+
+
+
+.form-row label{
+    position: relative;
+}
+
+.form-row label::before{
+    position: absolute;
+    content: '*';
+    color: red;
+    right: -8px;
+}
+
+.payment-application{
+    flex-direction: column;
+}
+
+
+
+.form-row{
+flex-direction: column !important;
+}
+
+.b-bottom{
+border-left: 0 !important;
+border-right: 0 !important;
+border-top: 0 !important;
+}
+
+.form-row select{
+border-left: 0 !important;
+border-right: 0 !important;
+border-top: 0 !important;
+}
+
+@media screen and (max-width:768px){
+    .menubarMobile{justify-content: end!important;}
+    .asia-photo-gallery h2{
+        font-size: 24px;
+    }
+ 
+    .asia-photo-gallery{
+        width: 260px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .caption-text{
+        bottom: 40px;
+        left: 10px;
+    }
+ 
+    .caption-text h5{
+        font-size: 16px !important;
+    }
+ 
+  }
+.accordion_form{font-family: 'NeueHaasDisplayMedium';font-weight: 500;cursor: pointer;color: #0000FF;}
+.accordion_form:hover{text-decoration: underline;}
+.republic-g-faculty .guest-item {
+    position: relative; /* Establish positioning context for the absolute child */
+    overflow: hidden; /* Optional: Ensures card body doesn't overflow rounded corners if any */
+  }
+  .republic-g-faculty .guest-item .card-body {
+    position: absolute; /* Position the body relative to the card */
+    bottom: 0;          /* Align to the bottom */
+    left: 0;           /* Align to the left */
+    width: 100%;        /* Take full width */
+    color: white;       /* White text for contrast */
+    padding: 0.75rem;   /* Adjust padding as needed */
+    margin: 0;          /* Remove any default margin */
+    transition: background-color 0.3s ease; /* Optional: Smooth transition on hover */
+  }
+
+  @media (min-width: 768px) {
+    /* On desktop (or larger screens) */
+    #desktop-video { display: block; }
+    #mobile-video { display: none; }
+    .top_section_disclaimer_content{
+        width: 546px;
+        height: 67px;
+        font-size: 27.5px;
+        line-height: 102%;
+        letter-spacing: 0%;
+        column-gap: 17px;
+        margin-top: 27px;
+    }
+    .top_section_disclaimer_content .filling{
+        border-right: 1.5px solid #fff;
+        padding-right: 17px;
+        height: 67px;
+    }
+    .course_begin{
+        font-size: 32.5px;
+        line-height: 117%;
+        letter-spacing: 0%;
+    }
+  }
+  @media (max-width: 767px) {
+    /* On mobile (or small screens) */
+    #desktop-video { display: none; }
+    #mobile-video { display: block; }
+    .hero-section{height: 100%!important;}
+    .top_section_disclaimer_content{column-gap: 8px;margin-top: 20px;}
+    .top_section_disclaimer_content .filling{padding-right: 8px;border-right: 1px solid #fff;height: 45px;font-size: 17px;}
+    .course_begin_date{font-size: 20px;align-items: baseline;}
+  }
+  .top_section_disclaimer_content{
+    display: flex;
+    align-items: center;
+    font-family: NeueHaasDisplayBold;
+    font-weight: 700;
+    justify-content: center;
+}
+.top_section_disclaimer_content .filling{
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+}
+  .course_begin_date{
+    display: flex;
+    flex-direction: column;
+}
+  .course_begin{
+    font-family: NeueHaasDisplayBold;
+    font-weight: 700;
+    color: #FFD600;
+  }
+  
+
