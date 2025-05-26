@@ -3,14 +3,14 @@ name: Build and Deploy to GKE
 on:
   push:
     branches:
-      - main
+      - maruthi-gke
 
 env:
-  PROJECT_ID: genuine-ridge-446107-a4
-  GKE_CLUSTER: myfirstcluster   # Updated cluster name here
-  GKE_ZONE: asia-southeast1-b   # Updated zone here
-  DEPLOYMENT_NAME: sample-deployment # Add your deployment name here.
-  IMAGE: mywebsite
+  PROJECT_ID: maruti-project-454712 
+  GKE_CLUSTER: cluster-1   # Updated cluster name here
+  GKE_ZONE: asia-south1-c # Updated zone here
+  DEPLOYMENT_NAME: republicschool-ui # Add your deployment name here.
+  IMAGE: republicschool-ui
 
 jobs:
   deploy:
@@ -50,7 +50,7 @@ jobs:
 
       - name: Build Docker image 
         run: |
-          docker build -t gcr.io/${{ env.PROJECT_ID }}/web-ui:$GITHUB_SHA \
+          docker build -t gcr.io/${{ env.PROJECT_ID }}/republicschool-ui:$GITHUB_SHA \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" \
           .
@@ -60,7 +60,7 @@ jobs:
          
 
          # docker push ${env.GKE_ZONE}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/web-ui
-           docker push gcr.io/${{ env.PROJECT_ID }}/web-ui:$GITHUB_SHA
+           docker push gcr.io/${{ env.PROJECT_ID }}/republicschool-ui:$GITHUB_SHA
 
       - name: Deploy to GKE
         run: |
@@ -70,4 +70,4 @@ jobs:
 
       - name: Verify deployment
         run: |
-          kubectl rollout status deployment/sampledeployment
+          kubectl rollout status deployment/republicschool-ui
