@@ -3,7 +3,7 @@ name: Build and Deploy to GKE
 on:
   push:
     branches:
-      - maruthi-gke
+      - maruthi-gk
 
 env:
   PROJECT_ID: maruti-project-454712
@@ -67,7 +67,7 @@ jobs:
           # Apply manifests
           kubectl apply -f k8s/deployment.yaml
           kubectl apply -f k8s/service.yaml
-          
+          kubectl apply -f k8s/ingress.yaml
 
       # Verify rollout status
       - name: Verify deployment
