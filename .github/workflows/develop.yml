@@ -3,7 +3,7 @@ name: Build and Deploy to GKE
 on:
   push:
     branches:
-      - maruthi-gke
+      - maruthi-gk
 
 env:
   PROJECT_ID: maruti-project-454712
