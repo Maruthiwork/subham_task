@@ -3,8 +3,9 @@ kind: Ingress
 metadata:
   name: republicschool-ui-ingress
   annotations:
-    kubernetes.io/ingress.class: "gce"  # Use GCP's Ingress controller
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
     - http:
         paths:
@@ -15,4 +16,3 @@ spec:
                 name: republicschool-ui-service
                 port:
                   number: 80
-
