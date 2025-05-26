@@ -62,11 +62,11 @@ jobs:
       - name: Deploy to GKE
         run: |
           # Replace image tag in deployment.yml
-          sed -i "s|image: .*|image: gcr.io/${{ env.PROJECT_ID }}/${{ env.IMAGE }}:$GITHUB_SHA|g" k8s/deployment.yml
+          sed -i "s|image: .*|image: gcr.io/${{ env.PROJECT_ID }}/${{ env.IMAGE }}:$GITHUB_SHA|g" k8s/deployment.yaml
 
           # Apply manifests
-          kubectl apply -f k8s/deployment.yml
-          kubectl apply -f k8s/service.yml
+          kubectl apply -f k8s/deployment.yaml
+          kubectl apply -f k8s/service.yaml
 
       # Verify rollout status
       - name: Verify deployment
