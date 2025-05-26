@@ -65,8 +65,8 @@ jobs:
           sed -i "s|image: .*|image: gcr.io/${{ env.PROJECT_ID }}/${{ env.IMAGE }}:$GITHUB_SHA|g" kubernetes/deployment.yml
 
           # Apply manifests
-          kubectl apply -f kubernetes/deployment.yml
-          kubectl apply -f kubernetes/service.yml
+          kubectl apply -f k8s/deployment.yml
+          kubectl apply -f k8s/service.yml
 
       # Verify rollout status
       - name: Verify deployment
