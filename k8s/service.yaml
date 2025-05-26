@@ -5,7 +5,7 @@ metadata:
   annotations:
     cloud.google.com/neg: '{"exposed_ports": {"80":{}}}'
 spec:
-  type: ClusterIP
+  type: NodePort                 # Changed from ClusterIP to NodePort
   selector:
     app: republicschool-ui
   ports:
