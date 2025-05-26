@@ -20,27 +20,32 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Authenticate with GCP using service account key
       - name: Authenticate with Google Cloud
         uses: google-github-actions/auth@v1
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
 
+      # Install Google Cloud CLI and necessary components
       - name: Set up gcloud CLI
         uses: google-github-actions/setup-gcloud@v1
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           install_components: 'gke-gcloud-auth-plugin'
 
+      # Configure GKE cluster credentials
       - name: Configure GKE context
         run: |
           gcloud container clusters get-credentials ${{ env.GKE_CLUSTER }} \
             --zone ${{ env.GKE_ZONE }} \
             --project ${{ env.PROJECT_ID }}
 
+      # (Optional) Authenticate Docker to push to GCR
       - name: Authenticate Docker to GCR
         run: |
           gcloud auth configure-docker gcr.io
 
+      # Build Docker image
       - name: Build Docker image
         run: |
           docker build -t gcr.io/${{ env.PROJECT_ID }}/${{ env.IMAGE }}:$GITHUB_SHA \
@@ -48,20 +53,22 @@ jobs:
             --build-arg GITHUB_REF="$GITHUB_REF" \
             .
 
+      # Push Docker image to Google Container Registry
       - name: Push Docker image to GCR
         run: |
           docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.IMAGE }}:$GITHUB_SHA
 
-      - name: Update image in Kubernetes deployment
+      # Deploy Kubernetes manifests
+      - name: Deploy to GKE
         run: |
-          kubectl set image deployment/${{ env.DEPLOYMENT_NAME }} \
-            ${{ env.DEPLOYMENT_NAME }}=gcr.io/${{ env.PROJECT_ID }}/${{ env.IMAGE }}:$GITHUB_SHA
+          # Replace image tag in deployment.yml
+          sed -i "s|image: .*|image: gcr.io/${{ env.PROJECT_ID }}/${{ env.IMAGE }}:$GITHUB_SHA|g" kubernetes/deployment.yml
 
-      - name: Apply Kubernetes manifests (optional)
-        run: |
+          # Apply manifests
           kubectl apply -f kubernetes/deployment.yml
           kubectl apply -f kubernetes/service.yml
 
+      # Verify rollout status
       - name: Verify deployment
         run: |
           kubectl rollout status deployment/${{ env.DEPLOYMENT_NAME }}
