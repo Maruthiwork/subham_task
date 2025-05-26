@@ -13,11 +13,11 @@ spec:
         app: republicschool-ui
     spec:
       containers:
-      - name: republicschool-ui
-        image: gcr.io/YOUR_PROJECT_ID/republicschool-ui:latest
-        ports:
-        - containerPort: 3002
-        env:
-        - name: NODE_ENV
-          value: "development"
+        - name: republicschool-ui
+          image: gcr.io/maruti-project-454712/republicschool-ui:latest
+          ports:
+            - containerPort: 3002
+          env:
+            - name: NODE_ENV
+              value: "development"
 
